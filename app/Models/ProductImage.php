@@ -18,6 +18,7 @@ class ProductImage extends Model
     {
         return [
             'is_primary' => 'boolean',
+            'sort_order' => 'integer',
         ];
     }
 
