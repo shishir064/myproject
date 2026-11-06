@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->longText('description')->nullable();
 
+            // Product Images
+            $table->json('images')->nullable();
+            
             // Pricing
             $table->decimal('price', 12, 2);
             $table->enum('discount_type', ['percentage', 'fixed'])->nullable();

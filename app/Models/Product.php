@@ -4,8 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Product extends Model
 {
@@ -13,6 +11,7 @@ class Product extends Model
         'name',
         'slug',
         'description',
+        'images',
         'price',
         'discount_type',
         'discount_value',
@@ -27,6 +26,7 @@ class Product extends Model
     protected function casts(): array
     {
         return [
+            'images' => 'array',
             'price' => 'decimal:2',
             'discount_value' => 'decimal:2',
             'in_stock' => 'boolean',
@@ -48,17 +48,9 @@ class Product extends Model
         return $this->belongsTo(Brand::class);
     }
 
-    // Product Images Relationship
-    public function images(): HasMany
+    public function orderItems()
     {
-        return $this->hasMany(ProductImage::class);
-    }
-
-    // Primary Product Image
-    public function primaryImage(): HasOne
-    {
-        return $this->hasOne(ProductImage::class)
-            ->where('is_primary', true);
+        return $this->hasMany(OrderItem::class);
     }
 
     // Calculate Discounted Price

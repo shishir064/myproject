@@ -15,7 +15,6 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
 use Illuminate\View\View;
-use PHPUnit\Metadata\Group;
 
 class ProductsTable
 {
@@ -25,10 +24,7 @@ class ProductsTable
             ->columns([
 
                 // // Product Image
-                // ImageColumn::make('images.image')
-                //     ->label('Image')
-                //     ->disk('public')
-                //     ->square(),
+                // ImageColumn::make('images'),
 
                 // Product Name
                 TextColumn::make('name')

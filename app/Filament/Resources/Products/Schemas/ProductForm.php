@@ -50,30 +50,27 @@ class ProductForm
                             ->columnSpanFull(),
 
                         // Product Images
-                        Section::make('Images')
-                            ->schema([
-                                Repeater::make('images')
-                                    ->relationship()
-                                    ->schema([
-
-                                        FileUpload::make('image')
-                                            ->image()
-                                            ->disk('public')
-                                            ->directory('products')
-                                            ->required(),
-
-                                        Toggle::make('is_primary')
-                                            ->default(false),
-
-                                        TextInput::make('sort_order')
-                                            ->numeric()
-                                            ->default(0),
-
-                                    ])
-                                    ->maxItems(5)
-                                    ->reorderable()
-                                    ->columnSpanFull(),
-                            ]),
+                            Section::make('Product Images')
+                                ->schema([
+                                    // FileUpload::make('images')
+                                    //     ->label('Upload Product Images')
+                                    //     ->image()
+                                    //     ->multiple()
+                                    //     ->reorderable()
+                                    //     ->maxFiles(5)
+                                    //     ->imageEditor()
+                                    //     ->disk('public')
+                                    //     ->directory('products')
+                                    //     ->visibility('public')
+                                    //     ->columnSpanFull(),
+                                    FileUpload::make('images')
+                                        ->label('Upload Product Images')
+                                        ->image()
+                                        ->multiple()
+                                        ->reorderable()
+                                        ->maxFiles(5)
+                                        ->imageEditor(),
+                                ]),
 
                     ])
                     ->columnSpan(2),
