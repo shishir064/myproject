@@ -41,6 +41,25 @@ class Order extends Model
         'notes',
     ];
 
+    protected static function booted(): void
+{
+    static::creating(function ($order) {
+
+        // Generate Order Number
+        if (empty($order->order_number)) {
+            $order->order_number = 'ORD-' . strtoupper(uniqid());
+        }
+
+        // Get Customer Information
+        // $user = User::find($order->user_id);
+
+        // if ($user) {
+        //     $order->customer_name = $user->name;
+        //     $order->email = $user->email;
+        // }
+    });
+}
+
     protected function casts(): array
     {
         return [

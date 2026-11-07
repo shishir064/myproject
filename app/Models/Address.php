@@ -13,7 +13,7 @@ class Address extends Model
         'phone',
         'street_address',
         'city',
-        'Province',
+        'province',
         'zip_code',
     ];
 
