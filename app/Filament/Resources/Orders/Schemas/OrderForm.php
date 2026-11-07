@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\Orders\Schemas;
 
 use App\Models\Product;
-use Dom\Text;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Repeater;
