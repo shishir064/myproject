@@ -23,7 +23,7 @@ class OrdersTable
                 ->sortable()
                 ->searchable(),
 
-                TextColumn::make('user.phone')
+                TextColumn::make('phone')
                     ->label('Phone Number')
                     ->sortable()
                     ->searchable(),

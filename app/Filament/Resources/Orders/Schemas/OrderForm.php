@@ -171,14 +171,16 @@ class OrderForm
                                                 $product = Product::find($state);
 
                                                 $price = (float) ($product?->price ?? 0);
+                                                $discount = (float) ($product?->discount_value ?? 0);
 
                                                 $set('price', $price);
-                                                $set('discount', 0);
+                                                $set('discount', $discount);
                                                 $set('unit_amount', $price);
 
                                                 $quantity = (int) ($get('quantity') ?? 1);
+                                                $unitAmount = max(0, $price - $discount);
 
-                                                $set('total_amount', $price * $quantity);
+                                                $set('total_amount', $unitAmount * $quantity);
                                             }),
 
                                         TextInput::make('quantity')
