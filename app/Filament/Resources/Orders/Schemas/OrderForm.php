@@ -43,51 +43,62 @@ class OrderForm
                                         $set('customer_name', $user?->name);
                                         $set('email', $user?->email);
                                         $set('phone', $user?->phone);
+                                        $set('address', $user?->address);
+                                        $set('city', $user?->city);
+                                        $set('province', $user?->Province);
+                                        $set('zip_code', $user?->zip_code);
+                                        $set('country', $user?->country);
                                     }),
 
-                                TextInput::make('customer_name')
+                                TextInput::make('name')
                                     ->label('Customer Name')
                                     ->required()
                                     ->maxLength(255)
-                                    ->disabled()
-                                    ->dehydrated(),
+                                    ->dehydrated(false),
 
                                 TextInput::make('email')
                                     ->label('Email')
                                     ->required()
                                     ->email()
+                                    ->dehydrated(false)
                                     ->maxLength(255),
 
                                 TextInput::make('phone')
                                     ->label('Phone')
                                     ->required()
                                     ->tel()
+                                    ->dehydrated(false)
                                     ->maxLength(20),
 
                                 TextInput::make('address')
                                     ->label('Shipping Address')
                                     ->required()
+                                    ->dehydrated(false)
                                     ->maxLength(255),
                                 
                                 TextInput::make('city')
                                     ->label('City')
                                     ->required()
+                                    ->dehydrated(false)
                                     ->maxLength(100),
 
                                 TextInput::make('province')
                                     ->label('State/Province')
                                     ->required()
+                                    ->dehydrated(false)
                                     ->maxLength(100),
 
                                 TextInput::make('country')
                                     ->label('Country')
                                     ->required()
+                                    ->dehydrated(false)
                                     ->maxLength(100),
 
                                 TextInput::make('zip_code')
                                     ->label('ZIP/Postal Code')
                                     ->required()
                                     ->numeric()
+                                    ->dehydrated(false)
                                     ->maxLength(20),
                                     
                                 Select::make('payment_method')

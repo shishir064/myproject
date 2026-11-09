@@ -13,16 +13,16 @@ class Order extends Model
         'order_number',
 
         // Customer Information
-        'customer_name',
-        'email',
-        'phone',
+        // 'customer_name',
+        // 'email',
+        // 'phone',
 
         // Shipping Address
-        'address',
-        'city',
-        'Province',
-        'zip_code',
-        'country',
+        // 'address',
+        // 'city',
+        // 'Province',
+        // 'zip_code',
+        // 'country',
 
         // Order Amounts
         'subtotal',

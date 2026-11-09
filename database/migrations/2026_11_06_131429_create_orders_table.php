@@ -19,16 +19,16 @@ return new class extends Migration
 
             $table->string('order_number')->unique();
 
-            $table->string('customer_name');
-            $table->string('email');
-            $table->string('phone');
+            // $table->string('customer_name');
+            // $table->string('email');
+            // $table->string('phone');
 
             // Shipping Address
-            $table->string('address');
-            $table->string('city');
-            $table->string('Province')->nullable();
-            $table->string('zip_code')->nullable();
-            $table->string('country')->default('Nepal');
+            // $table->string('address');
+            // $table->string('city');
+            // $table->string('Province')->nullable();
+            // $table->string('zip_code')->nullable();
+            // $table->string('country')->default('Nepal');
 
             // Order Amounts
             $table->decimal('subtotal', 12, 2);
