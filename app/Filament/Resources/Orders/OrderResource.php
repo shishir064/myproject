@@ -22,7 +22,10 @@ class OrderResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedShoppingBag;
 
-    protected static ?string $recordTitleAttribute = 'Order';
+    protected static ?string $recordTitleAttribute = 'order_number';
+
+    protected static ?int $navigationSort = 5;
+
 
     public static function form(Schema $schema): Schema
     {
